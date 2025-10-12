@@ -1,0 +1,82 @@
+/*
+css > style.css
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
+
+:root{
+    --primary-100:#EE1D52;
+    --primary-200:#ff607e;
+    --primary-300:#ffcddf;
+    --accent-100:#FFC107;
+    --accent-200:#916400;
+    --text-100:#333333;
+    --text-200:#5c5c5c;
+    --bg-100:#F7F7F7;
+    --bg-200:#ededed;
+    --bg-300:#c4c4c4;  
+}
+
+body {
+    font-family: "Gowun Batang", system-ui, -apple-system, sans-serif;
+    background-color: #F7F7F7;
+    color: #333333;
+}
+
+header {
+    padding: 45px;
+    text-align: center;
+}
+
+header h3 {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+main {
+    display: flex;
+    min-height: 78vh;
+
+    div{
+        padding: 20px;
+    }
+}
+
+.menu {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+
+    li{
+        margin: 0 15px;
+        padding: 15px 10px;
+        
+        .dropdown-content li{
+            margin: 0;
+            padding: 11px 0 0 10px;
+        }
+        .dropdown-content a{
+            font-size: 14px;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: #333333;
+        font-size: 20px;
+    }
+
+    a:hover {
+        color: #EE1D52;
+        border-radius: 5px;
+    }
+}
+
+.divider {
+    border-left: 1px solid #555;
+    height: auto;
+}
+
+.content {
+    width: 73%;
+    padding: 20px;
+}

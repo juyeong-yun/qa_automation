@@ -4,8 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="css/reset.css"> <!--css reset-->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <header>
+        <h3>QA Automation Studying Page</h3>
+    </header>
+
+    <main>
+        <div class="menu">
+            <ul>
+                <li><a href="pages/note.html">Note</a></li>
+                <li class="menu-dropdown"> <a>Automation</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">브라우저 랜더링</a></li>
+                        <li><a href="#">DOM & Seletor</a></Select></li>
+                        <li><a href="#">이벤트 시뮬레이션</a></li>
+                        <li><a href="#">자동화 도구</a></li>
+                    </ul>
+                </li>
+                <li class="menu-dropdown"><a>Testing</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">PlayWright</a></li>
+                        <li><a href="#">Cypress</a></li>
+                    </ul>
+                </li>
+                <li><a href="pages/about.html">About</a></li>
+            </ul>
+        </div>
+        
+        <div class="divider"></div>
+
+        <div class="content">
+            <h3>Welcome</h3>
+        </div>
+    </main>
+
+    <!-- 메뉴 드롭다운 
+    <script>
+        const dropdownMenus = document.querySelectorAll('.menu-dropdown');
+        dropdownMenus.forEach((menu) => {
+            const dropdown = menu.querySelector('.dropdown-content');
+
+            menu.addEventListener('mouseover', () => {
+                dropdown.style.display = 'block';
+            });
+            
+            menu.addEventListener('mouseout', () => {
+                dropdown.style.display = 'none';
+            });
+        });
+        -->
+    </script>
 </body>
 </html>
