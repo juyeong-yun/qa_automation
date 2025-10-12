@@ -23,31 +23,41 @@ body {
     color: #333333;
 }
 
+/* 헤더 */
 header {
-    padding: 45px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 47px;
     border-bottom: 1px solid #555;
 }
 
-header h3 {
+.header-img img{
+    width: 40px;
+    height: auto;
+}
+
+.title {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.title h3 {
     font-size: 26px;
     font-weight: 700;
 }
 
 main {
     display: flex;
-    justify-content: center;
-    min-height: 78vh;
+    justify-content: space-evenly;
+    min-height: 84vh;
 }
 
-main div {
-    padding: 20px;
-}
-
+/* 왼쪽 메뉴 */
 .menu {
-    width: 15%;
+    width: 17%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .menu a {
@@ -66,7 +76,7 @@ main div {
     padding: 15px 10px;
 }
 
-/* 드롭다운 메뉴 */
+/* 메뉴 > 드롭다운 */
 .dropdown-content li{
     margin: 0;
     padding: 11px 0 0 10px;
