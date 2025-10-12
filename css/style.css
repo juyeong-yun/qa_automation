@@ -60,6 +60,12 @@ main {
     justify-content: flex-start;
 }
 
+.menu ul {
+    width: 100%;
+    list-style: none;
+    padding: 10px;
+}
+
 .menu a {
     text-decoration: none;
     color: #333333;
@@ -72,20 +78,22 @@ main {
 }
 
 .menu li {
-    margin: 0 15px;
-    padding: 15px 10px;
+    padding: 18px 10px;
 }
 
-/* 메뉴 > 드롭다운 */
+.menu li a {
+    font-weight: 700;
+}
+
+/* 메뉴 > 드롭다운 */ 
 .dropdown-content li{
-    margin: 0;
-    padding: 11px 0 0 10px;
+    padding: 10px;
 }
 
-.dropdown-content a{
+.dropdown-content li a{
+    font-weight: 400;
     font-size: 14px;
 }
-
 
 .divider {
     border-left: 1px solid #555;
