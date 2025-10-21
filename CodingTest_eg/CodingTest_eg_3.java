@@ -21,3 +21,59 @@ Appium으로 모바일 앱 자동화 테스트
    - 실제 디바이스나 에뮬레이터를 사용하여 테스트하세요
    - 안정적인 스크립트를 위해 필요한 대기시간을 구현하세요.
 */
+
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDrivwer;
+import io.appium.java_client.remote.MobileCapabilityType;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+import java.net.URL;
+
+public class AppiumTest{
+  public static void main(String[] args){
+    // 앱 ium 설정 :: 테스트 할 디바이스와 앱의 정보를 설정
+    DesiredCapabilities caps = new DesiredCapabilities();
+    caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+    caps.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5544");
+    caps.setCapability(MobileCapabilityType.APP, "/path/to/app.apk");
+    
+    // 앱 패키지와 액티비티 설정
+    caps.setCapability("appPackage", "com.example.app");
+    caps.setCapability("appActivity", "com.example.app.MainActivity");
+
+    try{
+      AndroidDriver<MobileElement> driver = new AndroidDriver<>(
+        new URL("http://127.0.../wd/hub"), caps
+      );
+
+      // 1. 회원가입 페이지로 이동
+      MobileElement signUpButton = driver.findElementById("com.example.app:id/signUpButton");
+      signUpButton.click();
+
+      // 2. 사용자 정보 입력
+      MobileElement nameField = driver.findElementById("com.example.app:id/nameField");
+      MobileElement emailField = driver.findElementById("com.example.app:id/emailField");
+      MobileElement passwordField = driver.findElementById("com.example.app:id/passwordField");
+
+      nameField.sendKeys("테스트 사용자");
+      emailField.sendKeys("testuser@example.com");
+      passwordField.sendKeys("testpassword");
+
+      // 3. 회원가입 완료 버튼 클릭
+      MobileElement submitButton = driver.findElementById("com.example.app:id/submitButton");
+      submitButton.click();
+
+      // 4. 회원가입 성공 메시지 확인
+      MobileElement successMassage = driver.findElementById("com.example.app:id/successMassage");
+      if(successMassage.isDisplayed()){
+        System.out.println("회원가입 성공");
+      } else {
+        System.out.println("회원가입 실패");
+      }
+
+      // 테스트 완료 후 앱 종료
+      driver.quit();
+    } catch(Exception e){
+      e.printStackTrace();
+    }
+}
