@@ -11,6 +11,8 @@ CodingTest_eg_3.java와 동일 문제 > 파이썬으로 작성
 """
 from appium import webdriver
 from appium.wbdriver.common.mobility from MobileBy
+from selenium.webdriver.support.ui import WebdriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 # Appium 설정
 # caps :: 디바이스와 앱의 설정 정보를 담는 딕셔너리
@@ -30,6 +32,14 @@ try:
   # 1. 회원가입 페이지로 이동
   sign_up_button = driver.find_element(MobileBy.ID, 'com.example.app:id/signUpButton')
   sign_up_button.click()
+
+  /*
+  # 동적 대기 처리 가능
+  # 회원가입 버튼이 클릭 가능할 때까지 최대 10초 대기
+  sign_up_button = WebdriverWait(driver,10).until(
+    EC.element_to_be_clickable(MobileBy.ID,'com.example.app:id/signUpButton)
+  )
+  */
 
   # 2. 사용자 정보 입력
   name_field = driver.find_element(MobileBy.ID, 'com.example.app:id/name_field')
@@ -57,3 +67,5 @@ try:
 
 except Exception as e :
   print(e)
+  driver.save_screenshot('error.png') 
+  # 테스트 중 에러 발생 시 화면을 캡쳐하여 저장하면 디버깅 시 도움이 된다.
